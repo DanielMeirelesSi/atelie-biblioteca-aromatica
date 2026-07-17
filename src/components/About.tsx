@@ -34,16 +34,26 @@ export default function About() {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="font-display text-2xl text-plum sm:text-3xl">{siteConfig.owner.name}</h3>
+            <h3 className="font-display text-2xl text-plum sm:text-3xl">
+              Oi, eu sou a {siteConfig.owner.firstName}!
+            </h3>
+
             <p className="mt-4 text-[15px] leading-relaxed text-ink/75">
-              {siteConfig.owner.name} é a pessoa por trás do {siteConfig.name}. Entre livros,
-              músicas antigas, aromas gostosos e o carinho pelas pequenas coisas, ela encontrou no
-              artesanal um jeito de desacelerar e cuidar de si.
+              Sou a pessoa por trás do Ateliê Biblioteca Aromática. Sempre gostei de
+              livros, músicas antigas, aromas gostosos e de tudo aquilo que deixa a vida
+              um pouco mais leve e acolhedora.
             </p>
+
             <p className="mt-3 text-[15px] leading-relaxed text-ink/75">
-              Cada sabonete, vela e aroma nasce desse afeto: da vontade de transformar momentos
-              simples em pausas de bem-estar e de espalhar um pouco de aconchego para quem chega
-              até aqui.
+              Foi no trabalho artesanal que encontrei uma forma de desacelerar, cuidar de
+              mim e transformar esse carinho em algo que também pudesse chegar até outras
+              pessoas.
+            </p>
+
+            <p className="mt-3 text-[15px] leading-relaxed text-ink/75">
+              Cada sabonete, vela e aroma é feito com muito cuidado, pensando em tornar os
+              pequenos momentos do dia mais especiais. Espero que você se sinta acolhido
+              por aqui e encontre um pouquinho desse carinho em cada produto.
             </p>
             <a
               href={href}
@@ -52,7 +62,7 @@ export default function About() {
               className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-plum/25 bg-white px-6 py-3.5 text-base font-medium text-plum transition-colors hover:border-plum/50"
             >
               <WhatsAppIcon className="h-5 w-5" />
-              Falar com a {siteConfig.owner.firstName}
+              Fale comigo no WhatsApp
             </a>
           </div>
         </div>

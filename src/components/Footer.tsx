@@ -1,10 +1,20 @@
 import Image from "next/image";
 import { siteConfig, whatsappMessages } from "@/data/config";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import { WhatsAppIcon, InstagramIcon, ArrowRightIcon } from "@/components/icons";
+import {
+  WhatsAppIcon,
+  InstagramIcon,
+  ArrowRightIcon,
+} from "@/components/icons";
 
 export default function Footer() {
   const whatsappHref = buildWhatsAppUrl(whatsappMessages.general);
+
+  const developerWhatsappHref = buildWhatsAppUrl(
+    whatsappMessages.developer,
+    siteConfig.developer.whatsapp,
+  );
+
   const year = new Date().getFullYear();
 
   return (
@@ -25,7 +35,10 @@ export default function Footer() {
           height={771}
           className="h-16 w-auto"
         />
-        <p className="font-display text-sm italic text-plum-light">{siteConfig.tagline}</p>
+
+        <p className="font-display text-sm italic text-plum-light">
+          {siteConfig.tagline}
+        </p>
 
         <div className="flex items-center gap-3">
           <a
@@ -37,6 +50,7 @@ export default function Footer() {
           >
             <WhatsAppIcon className="h-5 w-5" />
           </a>
+
           <a
             href={siteConfig.contact.instagramUrl}
             target="_blank"
@@ -49,7 +63,11 @@ export default function Footer() {
         </div>
 
         <div className="mt-2 text-xs text-ink/50">
-          <p>Produtos artesanais feitos com cuidado por {siteConfig.owner.name}.</p>
+          <p>
+            Produtos artesanais feitos com cuidado por{" "}
+            {siteConfig.owner.name}.
+          </p>
+
           <p className="mt-1">
             © {year} {siteConfig.name}. Todos os direitos reservados.
           </p>
@@ -70,16 +88,31 @@ export default function Footer() {
             </p>
 
             <div className="flex flex-col items-center gap-3 sm:flex-row">
-              <p className="text-xs text-ink/55">{siteConfig.developer.pitch}</p>
-              <a
-                href={siteConfig.developer.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-plum/20 px-4 py-2 text-xs font-medium text-plum transition-colors hover:border-plum/45"
-              >
-                {siteConfig.developer.cta}
-                <ArrowRightIcon className="h-3.5 w-3.5" />
-              </a>
+              <p className="text-xs text-ink/55">
+                {siteConfig.developer.pitch}
+              </p>
+
+              <div className="flex items-center gap-2">
+                <a
+                  href={siteConfig.developer.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-plum/20 px-4 py-2 text-xs font-medium text-plum transition-colors hover:border-plum/45"
+                >
+                  {siteConfig.developer.portfolioCta}
+                  <ArrowRightIcon className="h-3.5 w-3.5" />
+                </a>
+
+                <a
+                  href={developerWhatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-plum/10 px-4 py-2 text-xs font-medium text-plum transition-colors hover:bg-plum hover:text-white"
+                >
+                  <WhatsAppIcon className="h-3.5 w-3.5" />
+                  {siteConfig.developer.whatsappCta}
+                </a>
+              </div>
             </div>
           </div>
         </div>

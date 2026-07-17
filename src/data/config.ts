@@ -21,9 +21,12 @@ export const siteConfig = {
 
   developer: {
     name: "Daniel Meireles",
+    firstName: "Daniel",
     url: "https://danielmeireles.dev",
+    whatsapp: "5531997111572",
     pitch: "Quer uma página como esta para a sua loja?",
-    cta: "Fale comigo",
+    portfolioCta: "Ver portfólio",
+    whatsappCta: "Chamar no WhatsApp",
   },
 
   serviceInfo: {
@@ -38,4 +41,5 @@ export const whatsappMessages = {
   general: `Olá, ${siteConfig.owner.firstName}! Conheci o Ateliê Biblioteca Aromática pelo catálogo e gostaria de mais informações.`,
   customOrder: `Olá, ${siteConfig.owner.firstName}! Gostaria de conversar sobre uma encomenda personalizada para o Ateliê Biblioteca Aromática.`,
   about: `Olá, ${siteConfig.owner.firstName}! Vi o site do Ateliê Biblioteca Aromática e gostaria de falar com você.`,
+  developer: `Olá, ${siteConfig.developer.firstName}! Vi o site do Ateliê Biblioteca Aromática e gostaria de conversar sobre um site para o meu negócio.`,
 } as const;

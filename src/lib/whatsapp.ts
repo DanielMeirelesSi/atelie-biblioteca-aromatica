@@ -2,8 +2,11 @@ import { siteConfig } from "@/data/config";
 import type { Product } from "@/data/products";
 import { formatPrice } from "@/lib/format";
 
-export function buildWhatsAppUrl(message: string): string {
-  return `https://wa.me/${siteConfig.contact.whatsapp}?text=${encodeURIComponent(message)}`;
+export function buildWhatsAppUrl(
+  message: string,
+  phone: string = siteConfig.contact.whatsapp,
+): string {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
 export function productUrl(slug: string): string {
