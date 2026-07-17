@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Conheça sabonetes artesanais, velas aromáticas, aromatizadores e presentes produzidos com cuidado pelo Ateliê Biblioteca Aromática.",
 
-  url: "https://atelie-biblioteca-aromatica.vercel.app",
+  url: "https://www.ateliebibliotecaaromatica.com.br/",
 
   owner: {
     name: "Érika Miranda",

@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/brand/og-default.jpg",
+        url: "/brand/og-default.jpeg",
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Sabonetes, velas e aromas artesanais`,
     description: siteConfig.description,
-    images: ["/brand/og-default.jpg"],
+    images: ["/brand/og-default.jpeg"],
   },
   icons: {
     icon: [
@@ -82,7 +82,7 @@ const businessJsonLd = {
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
-  image: `${siteConfig.url}/brand/og-default.jpg`,
+  image: `${siteConfig.url}/brand/og-default.jpeg`,
   slogan: siteConfig.tagline,
   areaServed: siteConfig.serviceInfo.region,
   sameAs: [siteConfig.contact.instagramUrl],
