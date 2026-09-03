@@ -54,7 +54,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Melancia",
-    price: 5,
+    price: 6,
     shortDescription:
       "Com manteiga de karité e extrato de calêndula, oferece limpeza suave, boa espumação e hidratação.",
     fullDescription:
@@ -71,7 +71,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Melancia",
-    price: 10,
+    price: 12,
     presentationPrice: 12,
     weight: "90 g",
     shortDescription:
@@ -90,7 +90,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Erva-doce",
-    price: 10,
+    price: 12,
     weight: "90 g",
     shortDescription:
       "Com extrato de erva-doce, propriedades calmantes e uma esfoliação suave que renova a pele.",
@@ -199,6 +199,24 @@ export const products: Product[] = [
     available: true,
   },
   {
+    id: "sab-liquido-lavanda",
+    slug: "sabonete-liquido-lavanda",
+    name: "Sabonete Líquido de Lavanda",
+    category: "sabonetes-artesanais",
+    type: "Sabonete líquido",
+    fragrance: "Lavanda",
+    price: 19.9,
+    weight: "100 ml",
+    priceNote: "100 ml por R$ 19,90 e 250 ml por R$ 29,90.",
+    shortDescription:
+      "Sabonete líquido artesanal de lavanda, delicado e perfumado para a rotina de cuidado.",
+    fullDescription:
+      "Sabonete líquido artesanal com fragrância de lavanda, pensado para trazer um toque delicado e perfumado à rotina de cuidado. Disponível em 100 ml por R$ 19,90 e 250 ml por R$ 29,90.",
+    image: "/produtos/sabonete-liquido-lavanda.jpeg",
+    imageAlt: "Sabonete líquido de lavanda em embalagem",
+    available: true,
+  },
+  {
     id: "sab-uva",
     slug: "sabonete-uva",
     name: "Sabonete de Uva",
@@ -238,7 +256,7 @@ export const products: Product[] = [
     type: "Sabonete artesanal",
     fragrance: "Tutti Frutti",
     price: 12,
-    priceNote: "Versão mini mousse por R$ 5,00.",
+    priceNote: "Versão mini mousse por R$ 6,00.",
     shortDescription:
       "Fragrância doce e alegre de tutti frutti. Espuma cremosa que deixa a pele macia.",
     fullDescription:
@@ -254,8 +272,8 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Alecrim e Sálvia",
-    price: 10,
-    priceNote: "Versão massageador por R$ 20,00 e massageador com ducha vegetal por R$ 22,00.",
+    price: 12,
+    priceNote: "Versão massageador por R$ 22,00 e massageador com ducha vegetal por R$ 22,00.",
     shortDescription:
       "Alecrim e sálvia numa combinação revitalizante. Limpeza suave com sensação de frescor.",
     fullDescription:
@@ -271,7 +289,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Maracujá",
-    price: 5,
+    price: 6,
     shortDescription:
       "Extrato de maracujá com espuma cremosa. Formato encantador, perfeito para presentear.",
     fullDescription:
@@ -287,7 +305,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Maracujá",
-    price: 10,
+    price: 12,
     presentationPrice: 12,
     weight: "90 g",
     shortDescription:
@@ -305,8 +323,8 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Pitaya",
-    price: 10,
-    priceNote: "Versão mini mousse por R$ 5,00.",
+    price: 12,
+    priceNote: "Versão mini mousse por R$ 6,00.",
     shortDescription:
       "Extrato de pitaya com propriedades antioxidantes e hidratantes. Pele macia e revitalizada.",
     fullDescription:
@@ -322,7 +340,7 @@ export const products: Product[] = [
     category: "sabonetes-artesanais",
     type: "Sabonete artesanal",
     fragrance: "Jasmim",
-    price: 10,
+    price: 12,
     presentationPrice: 12,
     weight: "90 g",
     shortDescription:
@@ -356,7 +374,7 @@ export const products: Product[] = [
     category: "sabonetes-massageadores",
     type: "Sabonete massageador",
     fragrance: "Melancia",
-    price: 20,
+    price: 22,
     shortDescription:
       "Massagem suave enquanto limpa. Fórmula com karité e calêndula que hidrata e nutre a pele.",
     fullDescription:
@@ -372,7 +390,7 @@ export const products: Product[] = [
     category: "sabonetes-massageadores",
     type: "Sabonete massageador",
     fragrance: "Maracujá",
-    price: 20,
+    price: 22,
     shortDescription:
       "Formato anatômico que auxilia no relaxamento muscular. Espuma cremosa e limpeza suave.",
     fullDescription:
@@ -433,21 +451,57 @@ export const products: Product[] = [
     available: false,
   },
   {
-    id: "escalda-pes",
-    slug: "escalda-pes",
-    name: "Escalda-pés",
+    id: "escalda-pes-menta-erva-doce",
+    slug: "escalda-pes-menta-erva-doce",
+    name: "Escalda-pés Menta e Erva-doce",
     category: "sabonetes-massageadores",
     type: "Escalda-pés",
-    fragrance: "Lavanda",
-    price: 6.9,
-    weight: "30 g",
-    priceNote: "30 g por R$ 6,90 e 100 g por R$ 15,90.",
+    fragrance: "Menta e Erva-doce",
+    price: 4.9,
+    weight: "25 g",
+    priceNote: "25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
     shortDescription:
-      "Alivia o cansaço dos pés, promove relaxamento e proporciona um momento de autocuidado.",
+      "Escalda-pés artesanal com aroma de menta e erva-doce para um momento simples de cuidado.",
     fullDescription:
-      "Ajuda a aliviar o cansaço dos pés, promove relaxamento e sensação de bem-estar, suaviza e hidrata a pele e proporciona um momento de autocuidado. Modo de usar: dissolva o conteúdo em uma bacia com água morna, deixe os pés de molho por 15 a 20 minutos, relaxe e respire profundamente. Disponível em 30 g por R$ 6,90 e 100 g por R$ 15,90.",
-    image: "/produtos/escalda-pes.jpeg",
-    imageAlt: "Escalda-pés artesanal em embalagem com lavanda",
+      "Escalda-pés artesanal na combinação menta e erva-doce, pensado para acompanhar momentos de pausa e autocuidado. Disponível em 25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
+    image: "/produtos/escalda-pes-menta-erva-doce.jpeg",
+    imageAlt: "Escalda-pés artesanal de menta e erva-doce",
+    available: true,
+  },
+  {
+    id: "escalda-pes-lavanda-camomila",
+    slug: "escalda-pes-lavanda-camomila",
+    name: "Escalda-pés Lavanda e Camomila",
+    category: "sabonetes-massageadores",
+    type: "Escalda-pés",
+    fragrance: "Lavanda e Camomila",
+    price: 4.9,
+    weight: "25 g",
+    priceNote: "25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
+    shortDescription:
+      "Escalda-pés artesanal com aroma de lavanda e camomila para uma pausa perfumada.",
+    fullDescription:
+      "Escalda-pés artesanal na combinação lavanda e camomila, criado para deixar o momento de cuidado mais delicado e perfumado. Disponível em 25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
+    image: "/produtos/escalda-pes-lavanda-camomila.jpeg",
+    imageAlt: "Escalda-pés artesanal de lavanda e camomila",
+    available: true,
+  },
+  {
+    id: "escalda-pes-camomila-flor-laranjeira",
+    slug: "escalda-pes-camomila-flor-laranjeira",
+    name: "Escalda-pés Camomila e Flor de Laranjeira",
+    category: "sabonetes-massageadores",
+    type: "Escalda-pés",
+    fragrance: "Camomila e Flor de Laranjeira",
+    price: 4.9,
+    weight: "25 g",
+    priceNote: "25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
+    shortDescription:
+      "Escalda-pés artesanal com aroma de camomila e flor de laranjeira, suave e perfumado.",
+    fullDescription:
+      "Escalda-pés artesanal na combinação camomila e flor de laranjeira, uma opção delicada para um momento simples de autocuidado. Disponível em 25 g por R$ 4,90, 50 g por R$ 6,90 e 100 g por R$ 15,90.",
+    image: "/produtos/escalda-pes-camomila-flor-laranjeira.jpeg",
+    imageAlt: "Escalda-pés artesanal de camomila e flor de laranjeira",
     available: true,
   },
   {
@@ -596,7 +650,7 @@ export const products: Product[] = [
     category: "velas-aromaticas",
     type: "Vela aromática",
     fragrance: "Café",
-    price: 30,
+    price: 35,
     shortDescription:
       "Aroma marcante de café recém-passado. Ambiente aconchegante para leitura e trabalho.",
     fullDescription:
@@ -762,6 +816,42 @@ export const products: Product[] = [
       "Leve aconchego e personalidade para qualquer ambiente. O kit reúne fragrâncias cuidadosamente selecionadas para perfumar a casa com elegância e criar uma atmosfera agradável e acolhedora. Kit com 3 sprays de 20 ml.",
     image: "/produtos/kit-aromatizadores.jpeg",
     imageAlt: "Kit com três sprays aromatizantes",
+    available: true,
+  },
+  {
+    id: "kit-aromatico-premium",
+    slug: "kit-aromatico-premium",
+    name: "Kit Aromático Premium",
+    category: "kits",
+    type: "Kit de presente",
+    fragrance: "Sortido",
+    price: 99.99,
+    isKit: true,
+    priceNote: "Fragrância Casa Chique por R$ 115,90.",
+    shortDescription:
+      "Kit aromático premium disponível nas fragrâncias Lavanda, Melancia, Bamboo, Maracujá e Chá Branco com Limão Siciliano.",
+    fullDescription:
+      "Kit aromático premium para presentear ou perfumar a rotina. Disponível nas fragrâncias Lavanda, Melancia, Bamboo, Maracujá e Chá Branco com Limão Siciliano. A fragrância Casa Chique também está disponível por R$ 115,90.",
+    image: "/produtos/kit-aromatico-premium.jpeg",
+    imageAlt: "Kit Aromático Premium",
+    available: true,
+  },
+  {
+    id: "kit-aromatico-lavabo",
+    slug: "kit-aromatico-lavabo",
+    name: "Kit Aromático Lavabo",
+    category: "kits",
+    type: "Kit de presente",
+    fragrance: "Sortido",
+    price: 99.9,
+    weight: "100 ml",
+    isKit: true,
+    shortDescription:
+      "Kit para lavabo com aromatizador e sabonete líquido de 100 ml nas fragrâncias Melancia, Bamboo e Lavanda.",
+    fullDescription:
+      "Kit Aromático Lavabo com aromatizador e sabonete líquido de 100 ml. Disponível nas fragrâncias Melancia, Bamboo e Lavanda, é uma opção completa para deixar o lavabo mais perfumado e acolhedor.",
+    image: "/produtos/kit-aromatico-lavabo.jpeg",
+    imageAlt: "Kit Aromático Lavabo com aromatizador e sabonete líquido",
     available: true,
   },
   {
