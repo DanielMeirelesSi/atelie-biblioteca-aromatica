@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllSlugs, getProductBySlug, categoryLabel } from "@/data/products";
+import { getAllSlugs, getProductBySlug } from "@/sanity/queries";
 import { siteConfig } from "@/data/config";
 import { formatPrice } from "@/lib/format";
 import { buildProductWhatsAppUrl, productUrl } from "@/lib/whatsapp";
@@ -15,12 +15,13 @@ interface ProductPageProps {
   params: { slug: string };
 }
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: ProductPageProps): Metadata {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const product = await getProductBySlug(params.slug);
   if (!product) {
     return { title: "Produto não encontrado" };
   }
@@ -56,8 +57,8 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
   };
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductPage({ params }: ProductPageProps) {
+  const product = await getProductBySlug(params.slug);
   if (!product) {
     notFound();
   }
@@ -69,8 +70,8 @@ export default function ProductPage({ params }: ProductPageProps) {
     "@type": "Product",
     name: product.name,
     description: product.fullDescription ?? product.shortDescription,
-    image: `${siteConfig.url}${product.image}`,
-    category: categoryLabel[product.category],
+    image: product.image,
+    category: product.categoryLabel ?? product.category,
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -134,7 +135,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
           <div className="flex flex-col">
             <p className="text-[11px] uppercase tracking-[0.24em] text-plum-light">
-              {categoryLabel[product.category]}
+              {product.categoryLabel ?? product.category}
               {product.weight ? ` · ${product.weight}` : ""}
             </p>
             <h1 className="mt-2 font-display text-2xl leading-tight text-plum sm:text-3xl">

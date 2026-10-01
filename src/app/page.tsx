@@ -6,14 +6,17 @@ import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import { getCategories, getProducts } from "@/sanity/queries";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const [categories, products] = await Promise.all([getCategories(), getProducts()]);
+
   return (
     <>
       <Header overlay />
       <main>
         <Hero />
-        <Catalog />
+        <Catalog categories={categories} products={products} />
         <CustomOrder />
         <About />
         <Contact />

@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { categories, products, type CategoryId } from "@/data/products";
+import type { Category, CategoryId, Product } from "@/sanity/types";
 import ProductCard from "@/components/ProductCard";
 import Filters, { type PriceBucket } from "@/components/Filters";
 import { SearchIcon, FilterIcon, CloseIcon } from "@/components/icons";
 import SectionHeading from "@/components/SectionHeading";
+
+interface CatalogProps {
+  categories: Category[];
+  products: Product[];
+}
 
 const priceBuckets: PriceBucket[] = [
   { id: "todos", label: "Todos" },
@@ -37,7 +42,7 @@ function normalize(value: string): string {
 const INITIAL_MOBILE = 6;
 const INITIAL_DESKTOP = 12;
 
-export default function Catalog() {
+export default function Catalog({ categories, products }: CatalogProps) {
   const [activeCategory, setActiveCategory] = useState<CategoryId | "todos">("todos");
   const [search, setSearch] = useState("");
   const [selectedType, setSelectedType] = useState("todos");
@@ -63,7 +68,7 @@ export default function Catalog() {
       activeCategory === "todos"
         ? products
         : products.filter((p) => p.category === activeCategory),
-    [activeCategory],
+    [activeCategory, products],
   );
 
   const typeOptions = useMemo(
@@ -91,7 +96,7 @@ export default function Catalog() {
       }
       return true;
     });
-  }, [activeCategory, selectedType, selectedFragrance, selectedPrice, search]);
+  }, [activeCategory, products, selectedType, selectedFragrance, selectedPrice, search]);
 
   useEffect(() => {
     setVisibleCount(initialCount);

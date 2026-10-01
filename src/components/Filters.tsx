@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import type { Category, CategoryId } from "@/data/products";
+import type { Category, CategoryId } from "@/sanity/types";
 import { CloseIcon } from "@/components/icons";
 
 export interface PriceBucket {

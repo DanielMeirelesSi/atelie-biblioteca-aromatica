@@ -1,5 +1,5 @@
 import { siteConfig } from "@/data/config";
-import type { Product } from "@/data/products";
+import type { Product } from "@/sanity/types";
 import { formatPrice } from "@/lib/format";
 
 export function buildWhatsAppUrl(

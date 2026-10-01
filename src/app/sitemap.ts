@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/config";
-import { getAllSlugs } from "@/data/products";
+import { getAllSlugs } from "@/sanity/queries";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
+  const slugs = await getAllSlugs();
 
-  const productPages: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
+  const productPages: MetadataRoute.Sitemap = slugs.map((slug) => ({
     url: `${siteConfig.url}/produto/${slug}`,
     lastModified,
     changeFrequency: "monthly",
